@@ -15,7 +15,7 @@ import com.example.medical_records.View_pager.Doctor_list.DoctorList;
 import com.example.medical_records.View_pager.Issues.Issues;
 import com.example.medical_records.View_pager.Profile.Profile;
 
-public class  Adapter extends FragmentStatePagerAdapter {
+public class Adapter extends FragmentStatePagerAdapter {
     public Adapter(@NonNull FragmentManager fm) {
         super(fm);
     }
