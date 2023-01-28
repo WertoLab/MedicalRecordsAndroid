@@ -12,4 +12,5 @@
     <string name="publications3">H1-index</string>
     <string name="publications4">Social mentions</string>
     <string name="no_publication">No publication to display on profile</string>
+    <string name="text_edit_about">Edit about</string>
 </resources>
