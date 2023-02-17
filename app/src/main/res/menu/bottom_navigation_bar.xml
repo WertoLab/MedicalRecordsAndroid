@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@drawable/person_48px"
+        android:title="@string/icon1"
+        android:id="@+id/profile"
+        android:enabled="true"/>
+    <item
+        android:icon="@drawable/contact_support_48px"
+        android:title="@string/icon2"
+        android:id="@+id/issues"
+        android:enabled="true"/>
+    <item
+        android:id="@+id/doctolist"
+        android:enabled="true"
+        android:icon="@drawable/stethoscope_48px"
+        android:title="@string/icon3" />
+</menu>

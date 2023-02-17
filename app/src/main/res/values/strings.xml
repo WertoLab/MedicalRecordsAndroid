@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Medical_Records</string>
+    <string name="icon1">Profile</string>
+    <string name="icon2">Issues</string>
+    <string name='icon3'>Doctor List</string>
+    <string name='text_in_adapter'>Specialty</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_about">Add a short description to highlight your work and experience</string>
+    <string name="publications1">Total</string>
+    <string name="publications2">Citations</string>
+    <string name="publications3">H1-index</string>
+    <string name="publications4">Social mentions</string>
+    <string name="no_publication">No publication to display on profile</string>
+    <string name="text_edit_about">Edit about</string>
+</resources>
