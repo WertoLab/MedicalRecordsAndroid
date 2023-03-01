@@ -3,6 +3,7 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/7dfcbb294bfdb21dcdc87e7dccf56b63/transformed/viewbinding-7.1.2/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7dfcbb294bfdb21dcdc87e7dccf56b63/transformed/viewbinding-7.1.2/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7dfcbb294bfdb21dcdc87e7dccf56b63/transformed/viewbinding-7.1.2/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
