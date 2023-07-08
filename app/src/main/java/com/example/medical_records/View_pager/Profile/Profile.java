@@ -55,35 +55,6 @@ public class Profile extends Fragment {
     //Career properties
     Button edit_career_property;
     TextView current_career_property;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.widget.Button;
-import android.widget.TextView;
-
-import com.example.medical_records.R;
-import com.example.medical_records.databinding.FragmentProfileBinding;
-
-import org.w3c.dom.Text;
-
-public class Profile extends Fragment {
-    FragmentProfileBinding binding;
-    int x_left,x_right;
-    int edit_height;
-    //base information
-    CardView profile_cardview;
-    TextView name;
-    TextView left_base;
-    TextView about;
-    TextView right_base;
-    Button edit_profile;
-
-    //about
-    CardView about_cardview;
-    TextView description;
-    Button edit_descpription;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

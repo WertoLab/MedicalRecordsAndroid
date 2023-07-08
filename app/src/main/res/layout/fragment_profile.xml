@@ -6,9 +6,12 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <!-- base information-->
         <androidx.cardview.widget.CardView
             android:layout_margin="10dp"
             app:cardCornerRadius="15dp"
@@ -109,6 +112,8 @@
                     android:layout_height="wrap_content"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
+
+        <!-- about -->
         <androidx.cardview.widget.CardView
             android:id="@+id/about_cardview"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -136,14 +141,14 @@
 
                 <TextView
                     android:id="@+id/short_desc"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="7dp"
                     android:textColor="@color/iconcolor"
                     android:textStyle="normal"
-                    app:layout_constraintTop_toBottomOf="@id/edit_about" />
+                    app:layout_constraintLeft_toLeftOf="@id/about"
+                    app:layout_constraintRight_toRightOf="@id/edit_about"
+                    app:layout_constraintTop_toBottomOf="@id/edit_about"/>
 
                 <Button
                     android:id="@+id/edit_about"
@@ -159,6 +164,8 @@
                     android:layout_height="wrap_content" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
+
+        <!-- interests -->
         <androidx.cardview.widget.CardView
             app:layout_constraintTop_toBottomOf="@id/about_cardview"
             android:layout_width="match_parent"
@@ -263,6 +270,8 @@
                     android:layout_height="wrap_content"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
+
+        <!-- experience and education -->
         <androidx.cardview.widget.CardView
             app:layout_constraintTop_toBottomOf="@id/interests_cardview"
             android:id="@+id/experience_and_education_cardview"
@@ -351,6 +360,8 @@
                     android:layout_height="wrap_content"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
+
+        <!-- publications -->
         <androidx.cardview.widget.CardView
             app:cardCornerRadius="15dp"
             android:id="@+id/publications_cardview"
@@ -456,6 +467,8 @@
                     android:layout_height="wrap_content"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
+
+        <!-- clinical trials -->
         <androidx.cardview.widget.CardView
             app:layout_constraintTop_toBottomOf="@id/publications_cardview"
             android:id="@+id/clinical_trials_cardview"
