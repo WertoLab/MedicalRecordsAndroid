@@ -1,46 +1,36 @@
 package com.example.medical_records.View_pager.Profile;
-import static com.example.medical_records.MainActivity.height;
 import static com.example.medical_records.MainActivity.width;
 
 import android.app.AlertDialog;
-import android.app.DatePickerDialog;
-import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.TimePicker;
 
 import com.example.medical_records.Career_oportunity.CareerOportunityAdapter;
 import com.example.medical_records.Career_oportunity.Career_oportunity;
+import com.example.medical_records.databinding.EditMedicalTrialBinding;
+import com.example.medical_records.medical_topic.medical_topic;
 import com.example.medical_records.R;
-import com.example.medical_records.databinding.CustomDialogEditaboutBinding;
 import com.example.medical_records.databinding.EditBasicInfoBinding;
 import com.example.medical_records.databinding.FragmentProfileBinding;
 import com.google.android.material.textfield.TextInputLayout;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class Profile extends Fragment {
     FragmentProfileBinding binding;
@@ -190,7 +180,7 @@ public class Profile extends Fragment {
             }
         });
         //Interest
-        edit_career_property = binding.editInterests;
+        edit_career_property = binding.editCareerOportunity;
         current_career_property = binding.currentCareerOportunity;
         ArrayList<Career_oportunity> arrayList = new ArrayList<>();
         arrayList.add(new Career_oportunity("Conducting Clinical Trials",getResources().getDrawable(R.drawable.medic)));
@@ -233,5 +223,39 @@ public class Profile extends Fragment {
                         .show();
             }
         });
+
+        //
+        ArrayList<Pair<String,String>> a =  new ArrayList<Pair<String, String>>();
+        a.add(new Pair<>("first","https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+        a.add(new Pair<>("second","https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+        a.add(new Pair<>("third","https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+        a.add(new Pair<>("forth","https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+        medical_topic medical_topic = new medical_topic(a, new com.example.medical_records.medical_topic.medical_topic.click_on_medical_topic() {
+            @Override
+            public void onclick(int position) {
+                AlertDialog.Builder b = new AlertDialog.Builder(getContext());
+                b.setTitle("Changing medical topic");
+                View vieww = getLayoutInflater().inflate(R.layout.edit_medical_trial,null,false);
+                EditMedicalTrialBinding bin = EditMedicalTrialBinding.bind(vieww);
+                b.setView(vieww);
+                Log.d("LOLKEK",position + " " + a.get(position).first  + " " + a.get(position).second);
+                EditText name = bin.nameEdittext;
+                EditText url = bin.urlEdittext;
+                name.setText(a.get(position).first);
+                url.setText(a.get(position).second);
+                b.setNegativeButton("Cancel",null);
+                b.setPositiveButton("Save", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if(!name.getText().toString().isEmpty() && !url.getText().toString().isEmpty())
+                        a.set(position,new Pair<>(name.getText().toString(),url.getText().toString()));
+                    }
+                });
+                b.show();
+            }
+        });
+        RecyclerView rec = binding.medicalTopics;
+        rec.setAdapter(medical_topic);
+
     }
 }
