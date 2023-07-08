@@ -183,25 +183,83 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <TextView
-                    android:id="@+id/current_career_oportunity"
-                    app:layout_constraintTop_toBottomOf="@+id/edit_interests"
+                    android:id="@+id/career_oportunity"
+                    android:text="Career oportunity"
+                    android:textSize="15sp"
+                    android:textColor="@color/iconcolor"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/interests_textview"
                     app:layout_constraintLeft_toLeftOf="@id/interests_textview"
                     android:layout_width="0dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
-                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/edit_career_oportunity"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/current_career_oportunity"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginLeft="15dp"
+                    android:drawablePadding="15dp"
+                    android:gravity="center_vertical|left"
+                    app:layout_constraintTop_toBottomOf="@id/career_oportunity"
+                    app:layout_constraintLeft_toLeftOf="@id/interests_textview"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <Button
-                    android:id="@+id/edit_interests"
+                    android:id="@+id/edit_career_oportunity"
                     android:text="Edit"
                     android:drawableLeft="@drawable/edit"
                     style="?attr/borderlessButtonStyle"
                     android:layout_marginRight="15dp"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintBottom_toBottomOf="@id/interests_textview"
-                    app:layout_constraintTop_toTopOf="@id/interests_textview"
+                    app:layout_constraintBottom_toBottomOf="@id/career_oportunity"
+                    app:layout_constraintTop_toTopOf="@id/career_oportunity"
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:id="@+id/border_view"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/current_career_oportunity"
+                    android:background="@color/iconcolor"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+                <TextView
+                    android:text="Medical Topics"
+                    android:textColor="@color/iconcolor"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/medical_topics_textview"
+                    app:layout_constraintTop_toBottomOf="@id/border_view"
+                    app:layout_constraintLeft_toLeftOf="@id/career_oportunity"
+                    android:layout_marginRight="15dp"
+                    app:layout_constraintRight_toLeftOf="@id/edit_medical_topics"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    app:layout_constraintRight_toRightOf="@id/edit_career_oportunity"
+                    app:layout_constraintTop_toTopOf="@id/medical_topics_textview"
+                    app:layout_constraintBottom_toBottomOf="@id/medical_topics_textview"
+                    android:text="Edit"
+                    android:id="@+id/edit_medical_topics"
+                    android:drawableLeft="@drawable/edit"
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/medical_topics"
+                    android:layout_marginTop="15dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/edit_medical_topics"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -340,7 +398,7 @@
                     app:layout_constraintTop_toBottomOf="@id/total_title"/>
                 <TextView
                     android:textColor="@color/iconcolor"
-                    
+
                     android:textSize="12sp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="15dp"
@@ -411,11 +469,49 @@
                 android:paddingBottom="15dp"
                 android:layout_height="match_parent">
                 <TextView
+                    android:id="@+id/clinical_trials_textview"
+                    android:textColor="@color/iconcolor"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:text="Clinical Trials"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="15dp"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/total"
+                    android:text="Total"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintTop_toBottomOf="@id/clinical_trials_textview"
+                    app:layout_constraintLeft_toLeftOf="@id/clinical_trials_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintTop_toBottomOf="@id/total"
+                    app:layout_constraintRight_toRightOf="@id/total"
+                    app:layout_constraintLeft_toLeftOf="@id/total"
+                    android:id="@+id/count_of_clinical_trials"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:id="@+id/border_line_clinical_trials"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintTop_toBottomOf="@id/count_of_clinical_trials"
+                    android:background="@color/iconcolor"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_clinical_trials"
+                    android:layout_margin="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/border_line_clinical_trials"
+                    android:layout_width="match_parent"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
                     android:layout_height="wrap_content"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
